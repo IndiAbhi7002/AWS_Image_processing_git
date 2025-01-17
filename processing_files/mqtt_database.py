@@ -16,8 +16,8 @@ MQTT_PORT = 8883  # Default secure port for MQTT
 MQTT_TOPIC = "apm/server"
 
 CA_CERT_PATH = '/home/ubuntu/AWS_Image_processing_git/processing_files/root-CA.crt'  # Replace with the path to your CA certificate
-CLIENT_CERT_PATH = "/home/ubuntu/AWS_Image_processing_git/test.cert.pem.crt"  # Replace with the path to your client certificate (optional)
-CLIENT_KEY_PATH = '/home/ubuntu/AWS_Image_processing_git/test.private.pem.key'  # Replace with the path to your client private key (optional)
+CLIENT_CERT_PATH = "/home/ubuntu/AWS_Image_processing_git/processing_files/test.cert.pem.crt"  # Replace with the path to your client certificate (optional)
+CLIENT_KEY_PATH = '/home/ubuntu/AWS_Image_processing_git/processing_files/test.private.pem.key'  # Replace with the path to your client private key (optional)
 
 # Create an MQTT client instance
 mqtt_client = mqtt.Client()
