@@ -65,11 +65,11 @@ def get_frame(image, metadata):
                 
                 output_path = os.path.join(output_folder, f"detected_{modified_ts_for_image}.jpg")
 
-                cv2.imwrite(output_path, frame_rgb)
                 if face_class_names[face_predicted_class] == 'Unknown':
                     # pass
                     print("Unknown Face Images found")
                 else:
+                    cv2.imwrite(output_path, frame_rgb)
                     print("Known face: ",face_class_names[face_predicted_class])
                     face_database(metadata, face_class_names[face_predicted_class], face_confidence)
 
