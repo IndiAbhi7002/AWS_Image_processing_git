@@ -21,16 +21,20 @@ RESIZE_HEIGHT = 640
 # Vehicle labels (Adjust according to your label_map.pbtxt file)
 
 # Model Paths
-PATH_TO_MODEL_DIR = os.path.join(current_dir, "models", "model1")
-PATH_TO_LABELS = os.path.join(PATH_TO_MODEL_DIR, 'label_map.pbtxt')
-PATH_TO_SAVED_MODEL = os.path.join(PATH_TO_MODEL_DIR, "saved_model")
+# PATH_TO_MODEL_DIR = os.path.join(current_dir, "models", "model1")
+# PATH_TO_LABELS = os.path.join(PATH_TO_MODEL_DIR, 'label_map.pbtxt')
+# PATH_TO_SAVED_MODEL = os.path.join(PATH_TO_MODEL_DIR, "saved_model")
+
+PATH_TO_MODEL_DIR ='/home/ubuntu/AWS_Image_processing_git/models/model1'
+PATH_TO_LABELS = '/home/ubuntu/AWS_Image_processing_git/models/model1/label_map.pbtxt'
+PATH_TO_SAVED_MODEL = "/home/ubuntu/AWS_Image_processing_git/models/model1/saved_model"
 
 # Load Model and Labels Once
 detect_fn = tf.saved_model.load(PATH_TO_SAVED_MODEL)
 category_index = label_map_util.create_category_index_from_labelmap(PATH_TO_LABELS, use_display_name=True)
 
 # Ensure the output folder exists
-output_folder = "Frames//analayzed_frames//"
+output_folder = "/home/ubuntu/AWS_Image_processing_git/Frames/analayzed_frames/"
 os.makedirs(output_folder, exist_ok=True)
 
 def process_image_data(frame, metadata):

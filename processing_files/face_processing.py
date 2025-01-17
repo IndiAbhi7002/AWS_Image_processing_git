@@ -6,7 +6,7 @@ import re
 from processing_files.mqtt_database import face_database
 import time
 
-face_model_path = 'processing_files/nepal3.tflite'
+face_model_path = '/home/ubuntu/AWS_Image_processing_git/processing_files/nepal3.tflite'
 face_interpreter = tf.lite.Interpreter(model_path=face_model_path)
 face_interpreter.allocate_tensors()
 
@@ -26,7 +26,7 @@ def preprocess_image_face(face, target_size=(64, 64)):
     face = np.expand_dims(face, axis=0).astype(np.float32)  # Convert to FLOAT32
     return face
 
-output_folder = "Frames//analayzed_face_frames//"
+output_folder = "/home/ubuntu/AWS_Image_processing_git/Frames/analayzed_face_frames/"
 
 os.makedirs(output_folder, exist_ok=True)
 
