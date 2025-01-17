@@ -4,6 +4,7 @@ from PIL import Image
 from io import BytesIO
 import time
 from processing_files.image_processing import process_image_data
+from processing_files.face_processing import get_frame
 
 # Connect to MongoDB
 client = pymongo.MongoClient('mongodb+srv://ankurauti:ankurauti02@cluster0.7ikri.mongodb.net/logo_base?retryWrites=true&w=majority&appName=Cluster0')
@@ -52,7 +53,7 @@ while True:
                 decode_end_time = time.time()
                 print(f"Time taken to decode the image: {decode_end_time - decode_start_time:.4f} seconds")
                 process_image_data(image, metadata)
-
+                get_frame(image, metadata)
             # Update the last processed ID
             last_processed_id = doc['_id']
 
